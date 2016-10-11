@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
 #define all(c) c.begin(), c.end()
+#define tr(container, it) \
+		for(typeof(container.begin()) it = container.begin(); it != container.end(); it++)
 #define m 3
 #define n 3
 using namespace std;
@@ -13,15 +15,20 @@ int main(){
 	for(int i=0; i<m; i++) A.push_back(vector<int>());
 	for(int i=0; i<m; i++){
 		for(int j=0; j<n; j++){
-			A[m].push_back(data[i][j]);
-			cout << A[m].back() << " ";
+			A[i].push_back(data[i][j]);
+		}	
+		cout << endl;
+	} 
+	for(int i=0; i<m; i++){
+		for(int j=0; j<n; j++){
+			cout << A[i][j] << " ";
 		}	
 		cout << endl;
 	} 
 	Solution s;
 	vector<int> R = s.spiralOrder(A);
 	for(int i=0; i<R.size(); i++){
-	//	cout << R[i] << " ";
+		cout << R[i] << " ";
 	}
 	return 0;
 }
